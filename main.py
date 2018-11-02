@@ -1,11 +1,7 @@
 import argparse
 
 def contract_func():
-    parser = argparse.ArgumentParser()
-    parser.add_argument(dest="str_in")
-    args = parser.parse_args()
-    str_in = args.str_in
-    #str_input = str(str_in)
+    str_in = seq_parsing()
     count = 1
     last_num_seq = False
     curr_num = str_in[0]
@@ -19,6 +15,13 @@ def contract_func():
             curr_num = str_in[i]
             count = 1
             last_num_seq = False
+
+
+def seq_parsing():
+    parser = argparse.ArgumentParser()
+    parser.add_argument(dest="str_in")
+    args = parser.parse_args()
+    return args.str_in
 
 
 if __name__ == "__main__":
